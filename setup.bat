@@ -1,6 +1,6 @@
 ECHO OFF
 
-SET "mypath=%"
+
 
 cd %USERPROFILE%\Documents\WindowsPowerShell\
 IF NOT EXIST Microsoft.PowerShell_profile.ps1 ( 
