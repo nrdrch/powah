@@ -22,5 +22,5 @@ IF NOT EXIST custom.omp.json (
 
 powershell -Command ". $PROFILE; Clear-Host"
 
-
+powershell -Command "Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))"
 exit
