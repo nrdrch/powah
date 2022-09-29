@@ -1,11 +1,14 @@
 # powah
 ### Tiny Script To Change Oh-Posh-Themes From The Command-line (windows)
-#### (you might need to: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser)
+#### You might need to Set your Execution-Policy:
+```
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 If you wish to install Oh-My-Posh run
 ```
 cmd.exe /c 'init.bat'
 ```
-Or Follow The Insctructions on:
+Or Follow The Insctructions At:
 ```
 https://ohmyposh.dev/docs/installation/windows
 ```
