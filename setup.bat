@@ -14,7 +14,7 @@ IF NOT EXIST ds (
 
 cd %USERPROFILE%\Documents\WindowsPowerShell\ds
 IF NOT EXIST custom.omp.json ( 
-    powershell -Command {& "New-Item custom.omp.json -Type File -Force"}
+    powershell -Command "New-Item custom.omp.json -Type File -Force"
 
 ) 
 
