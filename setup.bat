@@ -6,6 +6,7 @@ cd %USERPROFILE%\Documents\WindowsPowerShell\
 IF NOT EXIST Microsoft.PowerShell_profile.ps1 ( 
     powershell -Command "New-Item Microsoft.PowerShell_profile.ps1 -Type File -Force"
 ) 
+copy /y C:\Users\%username%\Documents\powah\MSPr.ps1 C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.Powershell_profile.ps1
 
 cd %USERPROFILE%\Documents\WindowsPowerShell
 IF NOT EXIST ds (
