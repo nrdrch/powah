@@ -26,3 +26,4 @@ powershell -Command "tar -xf $HOME\Documents\Meslo.zip -C $HOME\Documents\fonts\
 powershell -Command ". $PROFILE; Clear-Host"
 
 
+exit
