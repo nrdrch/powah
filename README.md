@@ -4,7 +4,7 @@
 ```
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
-If you wish to install Oh-My-Posh run
+If you wish to install Oh-My-Posh run (or just double click init.bat)
 ```
 cmd.exe /c 'init.bat'
 ```
