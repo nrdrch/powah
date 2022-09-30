@@ -12,3 +12,5 @@ Or Follow The Insctructions At:
 ```
 https://ohmyposh.dev/docs/installation/windows
 ```
+
+![](https://github.com/jds4nrdrch/gifs.git)
