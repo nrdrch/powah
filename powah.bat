@@ -4,7 +4,7 @@ CLS
 set "working=%~dp0"
 set "pshome=C:\Users\%username%\Documents\WindowsPowerShell"
 
-
+set "pop= CC:\Users\%username%\Documents\WindowsPowerShell\popeye.txt"
 
 CLS
 :MENU
