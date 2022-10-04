@@ -13,4 +13,6 @@ Add ( or replace ) this Line to your Powershell Profile:
 oh-my-posh init pwsh --config "$HOME\Documents\WindowsPowerShell\ds\custom.omp.json" | Invoke-Expression
 ```
 
-![](https://github.com/jds4nrdrch/gifs.git)
+
+
+![![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=VID)
