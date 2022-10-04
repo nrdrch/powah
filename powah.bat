@@ -4,24 +4,6 @@ CLS
 set "working=%~dp0"
 set "pshome=C:\Users\%username%\Documents\WindowsPowerShell"
 
-IF NOT EXIST %pshome%\ds (
-    mkdir "%pshome%\ds"
-)
-
-
-IF NOT EXIST %pshome%\ds\popeye.txt (
-    copy /y %working%\popeye.txt C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye.txt
-)
-
-SET "pop= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye.txt"
-cd %pshome%\ds
-
-IF NOT EXIST %pshome%\ds\custom.omp.json (
-    powershell.exe -Command "New-Item custom.omp.json -Type File -Force"
-)
-
-
-
 
 
 CLS
