@@ -10,12 +10,9 @@ https://ohmyposh.dev/docs/installation/windows
 ```
 
 
-#### 1) 
-####  Create a folder called "ds" in your WindowsPowerShell 
-#### 2)
-####  Move popeye.txt and custom.omp.json into your newly created folder. (ds)
-#### 3) 
-#### Add ( or replace ) this Line to your Powershell Profile: 
+#### 1) Create a folder called "ds" in your WindowsPowerShell 
+#### 2) Move popeye.txt and custom.omp.json into your newly created folder. (ds)
+#### 3) Add ( or replace ) this Line to your Powershell Profile: 
 ```
 oh-my-posh init pwsh --config "$HOME\Documents\WindowsPowerShell\ds\custom.omp.json" | Invoke-Expression
 ```
