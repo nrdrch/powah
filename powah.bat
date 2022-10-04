@@ -4,7 +4,7 @@ CLS
 set "working=%~dp0"
 set "pshome=C:\Users\%username%\Documents\WindowsPowerShell"
 
-set "pop= CC:\Users\%username%\Documents\WindowsPowerShell\popeye.txt"
+set "pop= CC:\Users\%username%\Documents\WindowsPowerShell\ds\popeye.txt"
 
 CLS
 :MENU
@@ -28,7 +28,7 @@ GOTO MENU
 powershell.exe -Command "Clear-Host"
 
 set /p theme= Enter The Theme Name: 
-copy /y C:\Users\%username%\AppData\Local\Programs\oh-my-posh\themes\%theme%.omp.json C:\Users\%username%\Documents\WindowsPowerShell\custom.omp.json
+copy /y C:\Users\%username%\AppData\Local\Programs\oh-my-posh\themes\%theme%.omp.json C:\Users\%username%\Documents\WindowsPowerShell\ds\custom.omp.json
 powershell.exe -Command [void]"{. $PROFILE; Clear-Host}"
 
 GOTO Quit
