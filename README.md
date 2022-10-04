@@ -8,7 +8,7 @@ If you wish to install Oh-My-Posh correctly follow the Instructions at:
 ```
 https://ohmyposh.dev/docs/installation/windows
 ```
-Add this Line to your Powershell Profile: 
+Add ( or replace ) this Line to your Powershell Profile: 
 ```
 oh-my-posh init pwsh --config "$HOME\Documents\WindowsPowerShell\ds\custom.omp.json" | Invoke-Expression
 ```
