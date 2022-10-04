@@ -7,14 +7,6 @@ function Edit-PSProfile {
     code $PSProfile
 }
 
-function Edit-PSModules {
-    [CmdletBinding()]
-    param (
-        $PSModules = "$HOME\Documents\WindowsPowerShell\ds\modules.psm1"
-    )
-    code $PSModules
-}
-
 function Edit-CurrentOMPTheme {
     [CmdletBinding()]
     param (
