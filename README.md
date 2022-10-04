@@ -4,13 +4,13 @@
 ```
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
-If you wish to install Oh-My-Posh and/or set it up correctly, run (or just double click init.bat)
-```
-cmd.exe /c 'C:\Users\%username%\Documents\setup.bat'
-```
-Or Follow The Insctructions At:
+If you wish to install Oh-My-Posh correctly follow the Instructions at:
 ```
 https://ohmyposh.dev/docs/installation/windows
+```
+Add this Line to your Powershell Profile: 
+```
+oh-my-posh init pwsh --config "$HOME\Documents\WindowsPowerShell\ds\custom.omp.json" | Invoke-Expression
 ```
 
 ![](https://github.com/jds4nrdrch/gifs.git)
