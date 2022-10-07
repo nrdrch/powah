@@ -92,6 +92,7 @@ git clone https://github.com/nrdrch/powah.git
 
 copy /y %TEMP%\powah\powah.bat %powahdir%\powah.bat
 copy /y %TEMP%\powah\popeye.txt %pop%
+copy /y %TEMP%\powah\allposhthemes.txt %thms%
 
 :Quit
 cls
