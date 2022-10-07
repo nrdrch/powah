@@ -2,7 +2,7 @@
 ### Tiny Script To Update & Change Oh-Posh-Themes From The Command-line (windows)
 #### (you need Oh-My-Posh and Git for Windows preinstalled for everything to work) 
 [![Showcase](https://img.youtube.com/vi/btP_ThG7QKI/0.jpg)](https://www.youtube.com/watch?v=btP_ThG7QKI)
-#### 1) Put powah.bat into your WindowsPowerShell Folder (where your Microsoft.PowerShell_profile.ps1 is located.)
+#### 1) Put powah.bat into your WindowsPowerShell Folder (where your Microsoft.PowerShell_profile.ps1 is located.) -If You Don't have a Profile file run: notepad $PROFILE
 #### 2) Create a folder called "ds" in your WindowsPowerShell Folder
 #### 3) Move popeye.txt, allposhthemes.txt and custom.omp.json into your newly created folder. (ds)
 #### 4) Add ( or replace ) this Line to your Powershell Profile: 
