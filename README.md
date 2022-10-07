@@ -1,6 +1,6 @@
 # powah
 ### Tiny Script To Update & Change Oh-Posh-Themes From The Command-line (windows)
-#### (you need Oh-My-Posh and Git for windows preinstalled for everything to work 
+#### (you need Oh-My-Posh and Git for Windows preinstalled for everything to work) 
 [![Showcase](https://img.youtube.com/vi/btP_ThG7QKI/0.jpg)](https://www.youtube.com/watch?v=btP_ThG7QKI)
 
 #### 1) Create a folder called "ds" in your WindowsPowerShell folder
