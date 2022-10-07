@@ -89,7 +89,7 @@ IF EXIST %TEMP%\powah (
     RMDIR /S /Q %TEMP%\powah
 )
 git clone https://github.com/nrdrch/powah.git
-:: updated!!!!2
+
 
 copy /y %TEMP%\powah\powah.bat %powahdir%\powah.bat
 
