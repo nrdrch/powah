@@ -25,6 +25,6 @@ Possible Entries:
       craver                  jandedobbeleer       nu4a               smoothie
       darkblood               jblab_2021           onehalf.minimal    sonicboom_dark
       default                 jonnychipz           paradox            sonicboom_light
-<=======================================================================================================================>
+<=====================================================================================================================>
 )
 >>-> 
