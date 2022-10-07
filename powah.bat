@@ -90,8 +90,8 @@ IF EXIST %TEMP%\powah (
 )
 git clone https://github.com/nrdrch/powah.git
 
-
 copy /y %TEMP%\powah\powah.bat %powahdir%\powah.bat
+copy /y %TEMP%\powah\popeye.txt %pop%
 
 :Quit
 cls
