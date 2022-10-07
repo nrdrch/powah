@@ -1,8 +1,8 @@
 # powah
 ### Tiny Script To Update & Change Oh-Posh-Themes From The Command-line (windows)
 
-
-![![ShowCase](https://img.youtube.com/vi/5ucCfKmu/0.jpg)](https://www.youtube.com/watch?v=5ucCfKmu)
+https://youtu.be/5ucCfKmu-2s
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/5ucCfKmu-2s/0.jpg)](https://www.youtube.com/watch?v=5ucCfKmu-2s)
 
 #### 1) Create a folder called "ds" in your WindowsPowerShell folder
 #### 2) Move popeye.txt and custom.omp.json into your newly created folder. (ds)
