@@ -6,4 +6,4 @@
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 ### All you have to do to install my Project is just downloading the Repo and running init.bat 
-
+### If You Don't have Oh-My-Posh Installed, or haven't even configured your $PROFILE, init.bat will also take care of that.
