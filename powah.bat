@@ -112,7 +112,7 @@ type %TEMP%\modulebuilder2.txt >> C:\Users\%username%\Documents\WindowsPowerShel
 :helpnm
 cls
 type %pop4%
-SET /P INPUT= Understood? (Y):
+SET /P INPUT= Understood? (Y): 
 IF /I '%INPUT%'=='Y' GOTO MENU2
 cls
 :Quit
