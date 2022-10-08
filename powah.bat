@@ -64,6 +64,7 @@ copy /y %TEMP%\powah\powah.bat %powahdir%\powah.bat
 copy /y %TEMP%\powah\ds\popeye.txt %pop%
 copy /y %TEMP%\powah\ds\popeye2.txt %pop2%
 copy /y %TEMP%\powah\ds\popeye3.txt %pop3%
+copy /y %TEMP%\powah\ds\popeye4.txt %pop4%
 copy /y %TEMP%\powah\ds\allposhthemes.txt %thms%
 GOTO MENU
 :MENU2
