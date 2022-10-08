@@ -127,7 +127,7 @@ ECHO     param ( >> %TEMP%\modulebuilder2.txt
 
 set /p paravalue= Enter Value for Parameter(Optional): 
 ECHO Value Of Parameter     :%paravalue% >> %TEMP%\modulebuilder.txt
-ECHO         %paraname% = "%paravalue%" >> %TEMP%\modulebuilder2.txt
+ECHO         $%paraname% = "%paravalue%" >> %TEMP%\modulebuilder2.txt
 ECHO     )        >> %TEMP%\modulebuilder2.txt
 set /p modulecode= Enter the Main Code you want to run: 
 ECHO Code beeing executed   :%modulecode% >> %TEMP%\modulebuilder.txt
@@ -139,6 +139,7 @@ GOTO progr
 
 :progr
 cls
+
 ECHO What You Configured:
 type %TEMP%\modulebuilder.txt
 type %pop3%
@@ -149,6 +150,12 @@ IF /I '%INPUT%'=='2' GOTO MENU
 
 
 :savemodule
+
+IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\mods.psm1 (
+    ECHO Import-Module "$HOME\Documents\WindowsPowerShell\mods.psm1" >> C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+)
+
+
 ECHO New-Alias -Name %alias% -Value Pop-PWH%alias% >> C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 type %TEMP%\modulebuilder2.txt >> C:\Users\%username%\Documents\WindowsPowerShell\mods.psm1
 
