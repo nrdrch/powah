@@ -1,9 +1,9 @@
 <=====================================================================================================================>
           .-'-.
-        /`     |__
-      /`  _.--`-,-`                 Create A New Module         ( 1
-      '-|`   a '<-.   []            Go Back To Menu             ( 0
-        \     _\__) \=`             
+        /`     |__                                                        Description:
+      /`  _.--`-,-`                 Create A New Module         ( 1           Create a single-word Alias for
+      '-|`   a '<-.   []            Go Back To Menu             ( 0           a (or multiple) Command(s)
+        \     _\__) \=`                                                       Including Parameters.
          C_  `    ,_/
            | ;----'
 >>-> 
