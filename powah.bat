@@ -118,3 +118,4 @@ cls
 :Quit
 cls
 ECHO If Your Theme DID NOT Load, Manually Reload Your PowerShellProfile. (e.g.: . $PROFILE)
+ECHO If You Created A New Module, Restart PowerShell.
