@@ -105,11 +105,13 @@ IF /I '%INPUT%'=='1' GOTO savemodule
 IF /I '%INPUT%'=='2' GOTO MENU
 IF /I '%INPUT%'=='Q' GOTO Quit
 :savemodule
+cls
 IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\mods.psm1 (
     ECHO Import-Module "$HOME\Documents\WindowsPowerShell\mods.psm1" >> C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 )
 ECHO New-Alias -Name %alias% -Value Pop-PWH%alias% >> C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 type %TEMP%\modulebuilder2.txt >> C:\Users\%username%\Documents\WindowsPowerShell\mods.psm1
+GOTO Quit
 :helpnm
 cls
 type %pop4%
