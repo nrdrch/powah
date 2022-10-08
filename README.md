@@ -1,5 +1,5 @@
 # powah
-### Tiny Script To Update & Change Oh-Posh-Themes From The Command-line (windows)
+### Tiny Script To Update & Change Oh-Posh-Themes From The Command-line & Create Modules for PowerShell
 #### (you need Oh-My-Posh and Git for Windows preinstalled for everything to work) 
 [![Showcase](https://img.youtube.com/vi/btP_ThG7QKI/0.jpg)](https://www.youtube.com/watch?v=btP_ThG7QKI)
 #### 1) Put powah.bat into your WindowsPowerShell Folder (where your Microsoft.PowerShell_profile.ps1 is located.) -If You Don't have a Profile file run: "notepad $PROFILE" in Powershell
