@@ -66,32 +66,23 @@ copy /y %TEMP%\powah\ds\popeye.txt %pop%
 copy /y %TEMP%\powah\ds\popeye2.txt %pop2%
 copy /y %TEMP%\powah\ds\popeye3.txt %pop3%
 copy /y %TEMP%\powah\ds\allposhthemes.txt %thms%
-
 GOTO MENU
 :MENU2
 CLS
-
 type %pop2%
 SET /P INPUT= Choose An Option: 
-
 IF /I '%INPUT%'=='1' GOTO newmodule
 IF /I '%INPUT%'=='2' GOTO newmoduleparam
 IF /I '%INPUT%'=='0' GOTO MENU
-
-
 CLS
 :newmodule
 CLS
-
 IF EXIST %TEMP%\modulebuilder.txt (
     DEL /q %TEMP%\modulebuilder.txt
 )
-
 IF EXIST %TEMP%\modulebuilder2.txt (
     DEL /q %TEMP%\modulebuilder2.txt
 )
-
-
 set /p alias= Create Custom ALias:  
 ECHO What you type to Run   :%alias% >> %TEMP%\modulebuilder.txt
 ECHO function Pop-PWH%alias% { >> %TEMP%\modulebuilder2.txt
@@ -104,27 +95,21 @@ ECHO     %modulecode% >> %TEMP%\modulebuilder2.txt
 echo } >> %TEMP%\modulebuilder2.txt
 GOTO progr
 cls
-
 :newmoduleparam
 cls
 IF EXIST %TEMP%\modulebuilder.txt (
     DEL /q %TEMP%\modulebuilder.txt
 )
-
 IF EXIST %TEMP%\modulebuilder2.txt (
     DEL /q %TEMP%\modulebuilder2.txt
 )
-
-
 set /p alias= Create Custom ALias: 
 ECHO What you type to Run   :%alias% >> %TEMP%\modulebuilder.txt
 ECHO function Pop-PWH%alias% { >> %TEMP%\modulebuilder2.txt
 ECHO     [CmdletBinding()] >> %TEMP%\modulebuilder2.txt
-
 set /p paraname= Enter Name for Parameter(Optional): 
 ECHO Name Of Parameter      :%paraname% >> %TEMP%\modulebuilder.txt
 ECHO     param ( >> %TEMP%\modulebuilder2.txt
-
 set /p paravalue= Enter Value for Parameter(Optional): 
 ECHO Value Of Parameter     :%paravalue% >> %TEMP%\modulebuilder.txt
 ECHO         $%paraname% = "%paravalue%" >> %TEMP%\modulebuilder2.txt
@@ -133,33 +118,21 @@ set /p modulecode= Enter the Main Code you want to run:
 ECHO Code beeing executed   :%modulecode% >> %TEMP%\modulebuilder.txt
 ECHO     %modulecode% >> %TEMP%\modulebuilder2.txt
 echo } >> %TEMP%\modulebuilder2.txt
-
-
 GOTO progr
-
 :progr
 cls
-
 ECHO What You Configured:
 type %TEMP%\modulebuilder.txt
 type %pop3%
 SET /P INPUT= Choose An Option: 
-
 IF /I '%INPUT%'=='1' GOTO savemodule
 IF /I '%INPUT%'=='2' GOTO MENU
-
-
 :savemodule
-
 IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\mods.psm1 (
     ECHO Import-Module "$HOME\Documents\WindowsPowerShell\mods.psm1" >> C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 )
-
-
 ECHO New-Alias -Name %alias% -Value Pop-PWH%alias% >> C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 type %TEMP%\modulebuilder2.txt >> C:\Users\%username%\Documents\WindowsPowerShell\mods.psm1
-
 :Quit
 cls
-
 ECHO If Your Theme DID NOT Load, Manually Reload Your PowerShellProfile. (e.g.: . $PROFILE)
