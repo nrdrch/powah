@@ -47,8 +47,6 @@ IF EXIST %TEMP%\oh-my-posh (
 git clone https://github.com/JanDeDobbeleer/oh-my-posh.git
 xcopy /s /q /y %TEMP%\oh-my-posh\themes %thmdir%\ 
 powershell -Command "Get-ChildItem -Path $HOME\AppData\Local\Programs\oh-my-posh\themes | Select-Object -ExpandProperty Name | Out-File $HOME\AppData\Local\Temp\pthemp.txt"
-:: set "upnmls= powershell -Command "Get-ChildItem -Path $HOME\AppData\Local\Programs\oh-my-posh\themes | Select-Object -ExpandProperty Name | Out-File $HOME\AppData\Local\Temp\pthemp.txt"
-:: Type %TEMP%\pthemp.txt > C:\Users\%username%\Documents\WindowsPowerShell\ds\allposhthemes.txt
 cls
 GOTO MENU
 :Reload
@@ -83,7 +81,7 @@ IF EXIST %TEMP%\modulebuilder.txt (
 IF EXIST %TEMP%\modulebuilder2.txt (
     DEL /q %TEMP%\modulebuilder2.txt
 )
-set /p alias= Create Custom ALias:  
+set /p alias= Create Custom Alias:  
 ECHO What you type to Run   :%alias% >> %TEMP%\modulebuilder.txt
 ECHO function Pop-PWH%alias% { >> %TEMP%\modulebuilder2.txt
 ECHO     [CmdletBinding()] >> %TEMP%\modulebuilder2.txt
@@ -107,12 +105,12 @@ set /p alias= Create Custom ALias:
 ECHO What you type to Run   :%alias% >> %TEMP%\modulebuilder.txt
 ECHO function Pop-PWH%alias% { >> %TEMP%\modulebuilder2.txt
 ECHO     [CmdletBinding()] >> %TEMP%\modulebuilder2.txt
-set /p paraname= Enter Name for Parameter(Optional): 
+set /p paraname= Enter Name for Parameter(Optional) | Must Begin with "$": 
 ECHO Name Of Parameter      :%paraname% >> %TEMP%\modulebuilder.txt
 ECHO     param ( >> %TEMP%\modulebuilder2.txt
 set /p paravalue= Enter Value for Parameter(Optional): 
 ECHO Value Of Parameter     :%paravalue% >> %TEMP%\modulebuilder.txt
-ECHO         $%paraname% = "%paravalue%" >> %TEMP%\modulebuilder2.txt
+ECHO         %paraname% = "%paravalue%" >> %TEMP%\modulebuilder2.txt
 ECHO     )        >> %TEMP%\modulebuilder2.txt
 set /p modulecode= Enter the Main Code you want to run: 
 ECHO Code beeing executed   :%modulecode% >> %TEMP%\modulebuilder.txt
