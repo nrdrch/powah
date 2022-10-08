@@ -1,5 +1,6 @@
 # powah
 ## Tiny Script To Update & Change Oh-Posh-Themes From The Command-line & Create Modules for PowerShell
+#### You Need https://gitforwindows.org/ Preinstalled.
 [![Showcase](https://img.youtube.com/vi/btP_ThG7QKI/0.jpg)](https://www.youtube.com/watch?v=btP_ThG7QKI)
 #### You Might Need To Change Your Execution Policy 
 ```
