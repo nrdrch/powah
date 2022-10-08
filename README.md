@@ -3,7 +3,7 @@
 #### (you need Oh-My-Posh and Git for Windows preinstalled for everything to work) 
 [![Showcase](https://img.youtube.com/vi/btP_ThG7QKI/0.jpg)](https://www.youtube.com/watch?v=btP_ThG7QKI)
 #### 1) Put powah.bat into your WindowsPowerShell Folder (where your Microsoft.PowerShell_profile.ps1 is located.)
-#### 2) Put the folder "ds" in your "WindowsPowerShell" Folder
+#### 2) Put the folder "ds" and its Contents in your "WindowsPowerShell" Folder
 #### 3) Add ( or replace ) this Line to your Powershell Profile: 
 ```
 oh-my-posh init pwsh --config "$HOME\Documents\WindowsPowerShell\ds\custom*" | Invoke-Expression
