@@ -62,10 +62,10 @@ IF EXIST %TEMP%\powah (
 )
 git clone https://github.com/nrdrch/powah.git
 copy /y %TEMP%\powah\powah.bat %powahdir%\powah.bat
-copy /y %TEMP%\powah\popeye.txt %pop%
-copy /y %TEMP%\powah\popeye2.txt %pop2%
-copy /y %TEMP%\powah\popeye3.txt %pop3%
-copy /y %TEMP%\powah\allposhthemes.txt %thms%
+copy /y %TEMP%\powah\ds\popeye.txt %pop%
+copy /y %TEMP%\powah\ds\popeye2.txt %pop2%
+copy /y %TEMP%\powah\ds\popeye3.txt %pop3%
+copy /y %TEMP%\powah\ds\allposhthemes.txt %thms%
 
 GOTO MENU
 :MENU2
