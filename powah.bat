@@ -5,7 +5,6 @@ SET "pop= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye.txt"
 SET "thms= C:\Users\%username%\Documents\WindowsPowerShell\ds\allposhthemes.txt"
 SET "pop2= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye2.txt"
 SET "pop3= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye3.txt"
-SET "bar= <=====================================================================================================================>"
 CLS
 :MENU
 cls
@@ -71,7 +70,6 @@ CLS
 type %pop2%
 SET /P INPUT= Choose An Option: 
 IF /I '%INPUT%'=='1' GOTO newmodule
-IF /I '%INPUT%'=='2' GOTO newmoduleparam
 IF /I '%INPUT%'=='0' GOTO MENU
 CLS
 :newmodule
@@ -94,30 +92,6 @@ ECHO     %modulecode% >> %TEMP%\modulebuilder2.txt
 echo } >> %TEMP%\modulebuilder2.txt
 GOTO progr
 cls
-:newmoduleparam
-cls
-IF EXIST %TEMP%\modulebuilder.txt (
-    DEL /q %TEMP%\modulebuilder.txt
-)
-IF EXIST %TEMP%\modulebuilder2.txt (
-    DEL /q %TEMP%\modulebuilder2.txt
-)
-set /p alias= Create Custom ALias: 
-ECHO What you type to Run   :%alias% >> %TEMP%\modulebuilder.txt
-ECHO function Pop-PWH%alias% { >> %TEMP%\modulebuilder2.txt
-ECHO     [CmdletBinding()] >> %TEMP%\modulebuilder2.txt
-set /p paraname= Enter Name for Parameter(Optional) | Must Begin with "$": 
-ECHO Name Of Parameter      :%paraname% >> %TEMP%\modulebuilder.txt
-ECHO     param ( >> %TEMP%\modulebuilder2.txt
-set /p paravalue= Enter Value for Parameter(Optional): 
-ECHO Value Of Parameter     :%paravalue% >> %TEMP%\modulebuilder.txt
-ECHO         %paraname% = "%paravalue%" >> %TEMP%\modulebuilder2.txt
-ECHO     )        >> %TEMP%\modulebuilder2.txt
-set /p modulecode= Enter the Main Code you want to run: 
-ECHO Code beeing executed   :%modulecode% >> %TEMP%\modulebuilder.txt
-ECHO     %modulecode% >> %TEMP%\modulebuilder2.txt
-echo } >> %TEMP%\modulebuilder2.txt
-GOTO progr
 :progr
 cls
 type %TEMP%\modulebuilder.txt
