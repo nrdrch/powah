@@ -6,7 +6,6 @@
 ```
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
-#### IF you do not have a MonoSpace font installed yet visit: https://www.nerdfonts.com/font-downloads
-
+### IF you do not have a MonoSpace font installed yet visit: https://www.nerdfonts.com/font-downloads
 ### All you have to do to install my Project is just downloading the Repo and running init.bat 
 ### If You Don't have Oh-My-Posh Installed, or haven't even configured your $PROFILE, init.bat will also take care of that!
