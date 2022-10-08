@@ -5,6 +5,7 @@ SET "pop= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye.txt"
 SET "thms= C:\Users\%username%\Documents\WindowsPowerShell\ds\allposhthemes.txt"
 SET "pop2= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye2.txt"
 SET "pop3= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye3.txt"
+SET "bar= <=====================================================================================================================>"
 CLS
 :MENU
 cls
@@ -81,7 +82,7 @@ IF EXIST %TEMP%\modulebuilder.txt (
 IF EXIST %TEMP%\modulebuilder2.txt (
     DEL /q %TEMP%\modulebuilder2.txt
 )
-set /p alias= Create Custom Alias:  
+set /p alias= Create Custom Alias: 
 ECHO What you type to Run   :%alias% >> %TEMP%\modulebuilder.txt
 ECHO function Pop-PWH%alias% { >> %TEMP%\modulebuilder2.txt
 ECHO     [CmdletBinding()] >> %TEMP%\modulebuilder2.txt
@@ -119,7 +120,6 @@ echo } >> %TEMP%\modulebuilder2.txt
 GOTO progr
 :progr
 cls
-ECHO What You Configured:
 type %TEMP%\modulebuilder.txt
 type %pop3%
 SET /P INPUT= Choose An Option: 
