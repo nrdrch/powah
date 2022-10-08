@@ -35,7 +35,7 @@ GOTO nextup
 :nextup
 
 IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\ds (
-    xcopy /y %pwhpth%\ds C:\Users\%username%\Documents\WindowsPowerShell\ds
+    xcopy /y /i %pwhpth%\ds C:\Users\%username%\Documents\WindowsPowerShell\ds
 ) 
 
 copy /y %pwhpth%\powah.bat C:\Users\%username%\Documents\WindowsPowerShell\powah.bat
