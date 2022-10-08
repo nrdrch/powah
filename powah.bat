@@ -5,6 +5,7 @@ SET "pop= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye.txt"
 SET "thms= C:\Users\%username%\Documents\WindowsPowerShell\ds\allposhthemes.txt"
 SET "pop2= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye2.txt"
 SET "pop3= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye3.txt"
+SET "pop4= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye4.txt"
 CLS
 :MENU
 cls
@@ -68,9 +69,11 @@ GOTO MENU
 :MENU2
 CLS
 type %pop2%
-SET /P INPUT= Choose An Option: 
+SET /P INPUT= Choose An Option (Or Q To Quit): 
 IF /I '%INPUT%'=='1' GOTO newmodule
+IF /I '%INPUT%'=='2' GOTO helpnm
 IF /I '%INPUT%'=='0' GOTO MENU
+IF /I '%INPUT%'=='Q' GOTO Quit
 CLS
 :newmodule
 CLS
@@ -80,7 +83,7 @@ IF EXIST %TEMP%\modulebuilder.txt (
 IF EXIST %TEMP%\modulebuilder2.txt (
     DEL /q %TEMP%\modulebuilder2.txt
 )
-set /p alias= Create Custom Alias: 
+set /p alias= Name Your Custom Alias: 
 ECHO What you type to Run   :%alias% >> %TEMP%\modulebuilder.txt
 ECHO function Pop-PWH%alias% { >> %TEMP%\modulebuilder2.txt
 ECHO     [CmdletBinding()] >> %TEMP%\modulebuilder2.txt
@@ -96,15 +99,22 @@ cls
 cls
 type %TEMP%\modulebuilder.txt
 type %pop3%
-SET /P INPUT= Choose An Option: 
+SET /P INPUT= Choose An Option (Or Q To Quit): 
 IF /I '%INPUT%'=='1' GOTO savemodule
 IF /I '%INPUT%'=='2' GOTO MENU
+IF /I '%INPUT%'=='Q' GOTO Quit
 :savemodule
 IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\mods.psm1 (
     ECHO Import-Module "$HOME\Documents\WindowsPowerShell\mods.psm1" >> C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 )
 ECHO New-Alias -Name %alias% -Value Pop-PWH%alias% >> C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 type %TEMP%\modulebuilder2.txt >> C:\Users\%username%\Documents\WindowsPowerShell\mods.psm1
+:helpnm
+cls
+type %pop4%
+SET /P INPUT= Understood? (Y):
+IF /I '%INPUT%'=='Y' GOTO MENU2
+cls
 :Quit
 cls
 ECHO If Your Theme DID NOT Load, Manually Reload Your PowerShellProfile. (e.g.: . $PROFILE)
