@@ -5,7 +5,9 @@ echo %pwhpth:~0,-1%
 IF NOT EXIST C:\Users\%username%\AppData\Local\Programs\oh-my-posh\bin\oh-my-posh.exe (
     powershell -Command "Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))"
 )
-
+IF NOT EXIST C:\Program Files\Git (
+    winget install --id=Git.Git -e --silent; GOTO Quit
+) 
 
 IF EXIST C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 (
     GOTO ifpsprofilexists
