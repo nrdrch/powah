@@ -41,6 +41,6 @@ else {
         Write-Host "Winget Installed"
     }
 }
-
+cmd.exe /c $Env:temp\crrtdr.txt
 
 
