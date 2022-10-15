@@ -4,10 +4,6 @@ powershell -Command "$currentdir = Get-Location"
 IF EXIST %currentpath%\stp.ps1 (
     powershell -Command "Set-ExecutionPolicy Bypass -Scope Process -Force -F $currentdir\stp.ps1"; DEL %currentpath%\stp.ps1 /q ; EXIT
 )
-
-IF NOT EXIST %CommonProgramFiles%\Git (
-    winget install -id Git.Git
-)
 IF NOT EXIST C:\Users\%username%\AppData\Local\Programs\oh-my-posh\bin\oh-my-posh.exe (
     powershell -Command "Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))"
 )
