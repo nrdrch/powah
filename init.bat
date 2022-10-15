@@ -1,7 +1,8 @@
 @ECHO OFF
 SET currentpath=%~dp0
 ECHO %currentpath:~0,-1%
-powershell -Command "Powershell.exe -ExecutionPolicy RemoteSigned -File .\wg.ps1"
+powershell -Command "$wgdir = Get-Location"
+powershell -Command "Powershell.exe -ExecutionPolicy RemoteSigned -File $wgdir\wg.ps1"
 
 IF NOT EXIST %CommonProgramFiles%\Git (
     winget install -id Git.Git
