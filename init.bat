@@ -49,4 +49,5 @@ PowerShell -Command "Get-ChildItem C:\Users\%username%\Documents\WindowsPowerShe
 PowerShell -Command "Get-ChildItem C:\Users\%username%\Documents\WindowsPowerShell\ds"
 GOTO Quit
 :Quit
+CLS
 ECHO PLEASE RESTART POWERSHELL
