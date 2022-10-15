@@ -10,19 +10,7 @@ IF EXIST C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_pr
 IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 (
     GOTO ifpsprofildsntexists
 )
-:install
 cls
-copy /y %currentpath%\powah.bat C:\Users\%username%\Documents\WindowsPowerShell\powah.bat
-IF EXIST %temp%\powahds (
-    RMDIR %temp%\powahds
-)
-cd %temp%
-git clone https://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@github.com/nrdrch/powahds.git %temp%
-copy /y %currentpath%\powah.bat C:\Users\%username%\Documents\WindowsPowerShell\powah.bat
-IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\ds (
-    MKDIR C:\Users\%username%\Documents\WindowsPowerShell\ds
-)
-xcopy /s /q /y %temp%\powahds C:\Users\%username%\Documents\WindowsPowerShell\ds
 :ifpsprofilexists
 cls
 SET "psplctn= C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
@@ -41,7 +29,23 @@ IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell (
 copy /y %currentpath%\PowerShellProfileExample.ps1 C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 SET "psplctn= C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
 copy /y %currentpath%\PowerShellProfileExample.ps1 C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
-GOTO install
-:Quit
 cls
+GOTO install
+:install
+cls
+copy /y %currentpath%\powah.bat C:\Users\%username%\Documents\WindowsPowerShell\powah.bat
+IF EXIST %temp%\powahds (
+    RMDIR %temp%\powahds
+)
+cd %temp%
+git clone https://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@github.com/nrdrch/powahds.git %temp%
+copy /y %currentpath%\powah.bat C:\Users\%username%\Documents\WindowsPowerShell\powah.bat
+IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\ds (
+    MKDIR C:\Users\%username%\Documents\WindowsPowerShell\ds
+)
+xcopy /s /q /y %temp%\powahds C:\Users\%username%\Documents\WindowsPowerShell\ds
+PowerShell -Command "Get-ChildItem C:\Users\%username%\Documents\WindowsPowerShell"
+PowerShell -Command "Get-ChildItem C:\Users\%username%\Documents\WindowsPowerShell\ds"
+GOTO Quit
+:Quit
 ECHO PLEASE RESTART POWERSHELL
