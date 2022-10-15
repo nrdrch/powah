@@ -66,8 +66,8 @@ IF EXIST %TEMP%\powahds (
 IF EXIST %TEMP%\powah (
     RMDIR /S /Q %TEMP%\powah
 )
-git clone https://github.com/nrdrch/powah.git
-git clone https://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@github.com/nrdrch/powahds.git
+git clone https://github.com/nrdrch/powah.git %TEMP%\powah
+git clone https://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@github.com/nrdrch/powahds.git %TEMP%\powahds
 copy /y %TEMP%\powah\powah.bat %powahdir%\powah.bat
 xcopy /s /q /y %TEMP%\powahds %powahdir%\ds\
 GOTO MENU
