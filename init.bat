@@ -1,8 +1,6 @@
 @ECHO OFF
 SET currentpath=%~dp0
-ECHO %currentpath:~0,-1%
 powershell -Command "$currentdir = Get-Location"
-powershell -Command "echo $currentdir > $Env:temp\crrtdr.txt"
 IF EXIST %currentpath%\stp.ps1 (
     powershell -Command "Set-ExecutionPolicy Bypass -Scope Process -Force -F $currentdir\stp.ps1"; DEL %currentpath%\stp.ps1 /q ; EXIT
 )
