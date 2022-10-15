@@ -1,6 +1,6 @@
 # powah
 ### Tiny Script To Update & Change Oh-Posh-Themes From The Command-line & Create Modules for PowerShell
-#### You Need https://gitforwindows.org/ and preferably some kind of Monospace https://www.nerdfonts.com/font-downloads Preinstalled.
+### You Need https://gitforwindows.org/ and preferably some kind of Monospace https://www.nerdfonts.com/font-downloads Preinstalled.
 [![Showcase](https://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
 #### You Might Need To Change Your Execution Policy with: 
 ```
