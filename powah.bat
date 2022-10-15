@@ -1,14 +1,20 @@
 @ECHO OFF
 title powah
 CLS 
-SET "pop= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye.txt"
 SET "thms= C:\Users\%username%\Documents\WindowsPowerShell\ds\allposhthemes.txt"
+SET "pop= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye.txt"
 SET "pop2= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye2.txt"
+SET "pop2b= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye2b.txt"
 SET "pop3= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye3.txt"
+SET "pop3b= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye3b.txt"
 SET "pop4= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye4.txt"
+SET "pop4b= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye4b.txt"
 SET "ds= C:\Users\%username%\Documents\WindowsPowerShell\ds"
 SET "powahdir= C:\Users\%username%\Documents\WindowsPowerShell"
+SET "prompt= C:\Users\%username%\Documents\WindowsPowerShell\ds\winhelper.txt"
+SET "psprofile= C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
 CLS
+
 :MENU
 cls
 Type %pop%
@@ -74,6 +80,7 @@ GOTO MENU
 :MENU2
 CLS
 type %pop2%
+SET INPUT=
 SET /P INPUT= Choose An Option (Or Q To Quit): 
 IF /I '%INPUT%'=='1' GOTO newmodule
 IF /I '%INPUT%'=='2' GOTO helpnm
@@ -104,16 +111,17 @@ cls
 cls
 type %TEMP%\modulebuilder.txt
 type %pop3%
-SET /P INPUT= Choose An Option (Or Q To Quit): 
+SET INPUT=
+SET /P INPUT= Choose An Option (Or Q To Quit):
 IF /I '%INPUT%'=='1' GOTO savemodule
 IF /I '%INPUT%'=='2' GOTO MENU
 IF /I '%INPUT%'=='Q' GOTO Quit
 :savemodule
 cls
 IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\mods.psm1 (
-    ECHO Import-Module "$HOME\Documents\WindowsPowerShell\mods.psm1" >> C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+    ECHO Import-Module "$HOME\Documents\WindowsPowerShell\mods.psm1" >> %psprofile%
 )
-ECHO New-Alias -Name %alias% -Value Pop-PWH%alias% >> C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+ECHO New-Alias -Name %alias% -Value Pop-PWH%alias% >> %psprofile%
 type %TEMP%\modulebuilder2.txt >> C:\Users\%username%\Documents\WindowsPowerShell\mods.psm1
 GOTO Quit
 :helpnm
@@ -124,7 +132,7 @@ IF /I '%INPUT%'=='Y' GOTO MENU2
 cls
 :winhelper
 cls
-SET "prompt= %~dp0\ds\winhelper.txt"
+
 :MENU4
 type %prompt%
 SET INPUT=
@@ -173,8 +181,41 @@ IF EXIST "C:\Program Files\MSEdgeRedirect" (
 )
 :newalias
 cls
-ECHO UnderConstruction
+Type %pop2b%
+SET INPUT=
+SET /P INPUT= Choose An Option (Or Q To Quit):
+IF /I '%INPUT%'=='1' GOTO mknewalias
+IF /I '%INPUT%'=='2' GOTO hpnewalias
+IF /I '%INPUT%'=='0' GOTO MENU
+IF /I '%INPUT%'=='Q' GOTO Quit
+:mknewalias
+cls
+SET nameofalias=
+SET /P nameofalias= Name Of The Alias: 
+SET originalcmd=
+SET /P originalcmd= Command The Alias The Should Replace: 
 
+ >> %psprofile% 
+:hpnewalias
+cls
+Type %pop4b%
+SET /P INPUT= Understood? (Y): 
+IF /I '%INPUT%'=='Y' GOTO newalias
+cls
+
+:confirmalias
+CLS
+ECHO New-Alias -Name %nameofalias% -Value %originalcmd%
+Type %pop3b%
+SET INPUT=
+SET /P INPUT= Choose An Option (Or Q To Quit):
+IF /I '%INPUT%'=='1' GOTO svalias
+IF /I '%INPUT%'=='0' GOTO MENU
+IF /I '%INPUT%'=='Q' GOTO Quit
+
+:svalias
+ECHO New-Alias -Name %nameofalias% -Value %originalcmd% >> %psprofile%
+GOTO Quit
 :Quit
 cls
 ECHO If Your Theme DID NOT Load, Manually Reload Your PowerShellProfile. (e.g.: . $PROFILE)
