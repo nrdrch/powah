@@ -127,7 +127,7 @@ cls
 :winhelper
 cls
 SET "prompt= %~dp0\ds\winhelper.txt"
-:MENU
+:MENU4
 type %prompt%
 SET INPUT=
 SET /P INPUT= Choose An Option (Or Q To Quit): 
@@ -142,17 +142,17 @@ IF /I '%INPUT%'=='Q' GOTO Quit
 cls
 powershell -C "iwr -useb https://massgrave.dev/get | iex"
 cls
-GOTO MENU
+GOTO MENU4
 :tronscript
 cls
 powershell -C "start https://github.com/bmrf/tron#use"
 powershell -C "Powershell.exe -executionpolicy remotesigned -File $HOME\Documents\WindowsPowerShell\ds\installtron.ps1"
 start C:\Users\%username%\Desktop\Tron.exe
-GOTO MENU
+GOTO MENU4
 :winfilecheck
 cls
 powershell -C "sfc /scannow"
-GOTO MENU
+GOTO MENU4
 :windebloater
 cls
 IF NOT EXIST C:\Users\%username%\Documents\winutil (
@@ -161,7 +161,7 @@ IF NOT EXIST C:\Users\%username%\Documents\winutil (
 IF EXIST C:\Users\%username%\Documents\winutil (
     powershell -C "cd $HOME\Documents\winutil; Powershell.exe -executionpolicy remotesigned -File winutil.ps1"
 )
-GOTO MENU
+GOTO MENU4
 :reclaimwin
 cls
 Powershell -executionpolicy remotesigned -File %~dp0\ds\rcwin.ps1
