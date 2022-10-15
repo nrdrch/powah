@@ -126,10 +126,6 @@ IF /I '%INPUT%'=='Y' GOTO MENU2
 cls
 :winhelper
 cls
-IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\winhelper.bat (
-    ECHO winhelper.bat IS NOT Installed Locaed in your WindowsPowerShell Folder
-)
-title winhelper
 SET "prompt= %~dp0\ds\winhelper.txt"
 :MENU
 type %prompt%
