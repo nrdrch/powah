@@ -41,6 +41,7 @@ else {
         Write-Host "Winget Installed"
     }
 }
-cmd.exe /c $Env:temp\crrtdr.txt
+$initdir = $Env:temp\crrtdr.txt
+cmd.exe /c $initdir
 
 
