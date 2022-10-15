@@ -43,7 +43,7 @@ IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\ds (
     MKDIR C:\Users\%username%\Documents\WindowsPowerShell\ds
 )
 cd %temp%
-git clone https://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@github.com/nrdrch/powahds.git %temp%\powahds
+git clone https://github.com/nrdrch/powahds.git %temp%\powahds
 xcopy /s /q /y %temp%\powahds C:\Users\%username%\Documents\WindowsPowerShell\ds
 PowerShell -Command "Get-ChildItem C:\Users\%username%\Documents\WindowsPowerShell"
 PowerShell -Command "Get-ChildItem C:\Users\%username%\Documents\WindowsPowerShell\ds"
