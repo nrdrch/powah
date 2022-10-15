@@ -114,7 +114,7 @@ type %pop3%
 SET INPUT=
 SET /P INPUT= Choose An Option (Or Q To Quit):
 IF /I '%INPUT%'=='1' GOTO savemodule
-IF /I '%INPUT%'=='2' GOTO MENU
+IF /I '%INPUT%'=='0' GOTO MENU
 IF /I '%INPUT%'=='Q' GOTO Quit
 :savemodule
 cls
@@ -143,7 +143,9 @@ IF /I '%INPUT%'=='3' GOTO winfilecheck
 IF /I '%INPUT%'=='4' GOTO windebloater
 IF /I '%INPUT%'=='5' GOTO reclaimwin
 IF /I '%INPUT%'=='6' GOTO edgerd
+IF /I '%INPUT%'=='0' GOTO MENU
 IF /I '%INPUT%'=='Q' GOTO Quit
+cls
 :winactivation
 cls
 powershell -C "iwr -useb https://massgrave.dev/get | iex"
