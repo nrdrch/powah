@@ -12,9 +12,7 @@ IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShel
 )
 :install
 cls
-IF EXIST %temp%\powah (
-    RMDIR %temp%\powah
-)
+copy /y %currentpath%\powah.bat C:\Users\%username%\Documents\WindowsPowerShell\powah.bat
 IF EXIST %temp%\powahds (
     RMDIR %temp%\powahds
 )
