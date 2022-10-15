@@ -181,6 +181,7 @@ IF NOT EXIST "C:\Program Files\MSEdgeRedirect" (
 IF EXIST "C:\Program Files\MSEdgeRedirect" (
     ECHO MSEdgeRedirect is already Installed
 )
+GOTO MENU4
 :newalias
 cls
 Type %pop2b%
