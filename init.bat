@@ -12,11 +12,11 @@ IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShel
 )
 :install
 cls
-IF NOT EXIST %temp%\powahds (
-    GOTO install
+IF EXIST %temp%\powah (
+    RMDIR %temp%\powah
 )
 IF EXIST %temp%\powahds (
-    RMDIR %temp%\powahds; GOTO install
+    RMDIR %temp%\powahds
 )
 cd %temp%
 git clone https://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@github.com/nrdrch/powahds.git %temp%
