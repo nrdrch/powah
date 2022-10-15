@@ -69,7 +69,7 @@ IF EXIST %TEMP%\powah (
 git clone https://github.com/nrdrch/powah.git
 git clone https://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@github.com/nrdrch/powahds.git
 copy /y %TEMP%\powah\powah.bat %powahdir%\powah.bat
-xcopy /s /q /y %TEMP%\powahds %powahdir%\ds
+xcopy /s /q /y %TEMP%\powahds %powahdir%\ds\
 GOTO MENU
 :MENU2
 CLS

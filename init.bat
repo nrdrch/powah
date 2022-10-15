@@ -37,12 +37,13 @@ copy /y %currentpath%\powah.bat C:\Users\%username%\Documents\WindowsPowerShell\
 IF EXIST %temp%\powahds (
     RMDIR %temp%\powahds
 )
-cd %temp%
-git clone https://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@github.com/nrdrch/powahds.git %temp%
+
 copy /y %currentpath%\powah.bat C:\Users\%username%\Documents\WindowsPowerShell\powah.bat
 IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\ds (
     MKDIR C:\Users\%username%\Documents\WindowsPowerShell\ds
 )
+cd %temp%
+git clone https://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@github.com/nrdrch/powahds.git %temp%
 xcopy /s /q /y %temp%\powahds C:\Users\%username%\Documents\WindowsPowerShell\ds
 PowerShell -Command "Get-ChildItem C:\Users\%username%\Documents\WindowsPowerShell"
 PowerShell -Command "Get-ChildItem C:\Users\%username%\Documents\WindowsPowerShell\ds"
