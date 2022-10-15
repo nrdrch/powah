@@ -183,7 +183,7 @@ IF EXIST "C:\Program Files\MSEdgeRedirect" (
 cls
 Type %pop2b%
 SET INPUT=
-SET /P INPUT= Choose An Option (Or Q To Quit):
+SET /P INPUT= Choose An Option (Or Q To Quit): 
 IF /I '%INPUT%'=='1' GOTO mknewalias
 IF /I '%INPUT%'=='2' GOTO hpnewalias
 IF /I '%INPUT%'=='0' GOTO MENU
@@ -194,6 +194,7 @@ SET nameofalias=
 SET /P nameofalias= Name Of The Alias: 
 SET originalcmd=
 SET /P originalcmd= Command The Alias The Should Replace: 
+GOTO confirmalias
 cls
 :hpnewalias
 cls
@@ -201,7 +202,6 @@ Type %pop4b%
 SET /P INPUT= Understood? (Y): 
 IF /I '%INPUT%'=='Y' GOTO newalias
 cls
-
 :confirmalias
 CLS
 ECHO New-Alias -Name %nameofalias% -Value %originalcmd%
