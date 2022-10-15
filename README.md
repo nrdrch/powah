@@ -10,6 +10,4 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 git clone https://github.com/nrdrch/powah.git $Env:TEMP\powah | cmd.exe /c $Env:TEMP\powah\init.bat
 ```
-All you have to do to install my Project is just downloading the Repo and running init.bat 
-If You don't have Oh-My-Posh Installed, or haven't even configured your $PROFILE, init.bat will also take care of that!
-After that everything should work, Restart PowerShell if you had it open and enter "powah"
+When it is done Installing, Restart PowerShell and enter powah "powah"
