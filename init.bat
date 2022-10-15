@@ -32,7 +32,6 @@ CLS
 GOTO install
 :install
 CLS
-COPY /y %currentpath%\powah.bat C:\Users\%username%\Documents\WindowsPowerShell\powah.bat
 IF EXIST %temp%\powahds (
     RMDIR %temp%\powahds
 )
@@ -43,7 +42,8 @@ IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\ds (
 )
 cd %temp%
 git clone https://github.com/nrdrch/powahds.git %temp%\powahds
-COPY /y %temp%\powahds\powah.bat C:\Users\%username%\Documents\WindowsPowerShell\ds\powah.bat
+COPY /y %temp%\powahds\powah.bat C:\Users\%username%\Documents\WindowsPowerShell\powah.bat
+DEL /q %temp%\powahds\powah.bat
 XCOPY /s /q /y %temp%\powahds C:\Users\%username%\Documents\WindowsPowerShell\ds
 PowerShell -Command "Get-ChildItem C:\Users\%username%\Documents\WindowsPowerShell"
 PowerShell -Command "Get-ChildItem C:\Users\%username%\Documents\WindowsPowerShell\ds"
