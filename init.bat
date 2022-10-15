@@ -1,9 +1,10 @@
 @ECHO OFF
 SET currentpath=%~dp0
 ECHO %currentpath:~0,-1%
-powershell -Command "$wgdir = Get-Location"
-powershell -Command "Powershell.exe -ExecutionPolicy RemoteSigned -File $wgdir\wg.ps1"
-
+powershell -Command "$currentdir = Get-Location"
+git clone https://github.com/nrdrch/powahds.git %temp%\powahds
+Powershell -Command "$wg1 = $Env:temp\powahds\wg.ps1"
+cmd.exe /c %wg1%
 IF NOT EXIST %CommonProgramFiles%\Git (
     winget install -id Git.Git
 )
