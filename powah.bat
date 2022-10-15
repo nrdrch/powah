@@ -6,6 +6,7 @@ SET "thms= C:\Users\%username%\Documents\WindowsPowerShell\ds\allposhthemes.txt"
 SET "pop2= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye2.txt"
 SET "pop3= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye3.txt"
 SET "pop4= C:\Users\%username%\Documents\WindowsPowerShell\ds\popeye4.txt"
+SET "dslctn= C:\Users\%username%\Documents\WindowsPowerShell\ds"
 CLS
 :MENU
 cls
@@ -17,6 +18,8 @@ IF /I '%INPUT%'=='2' GOTO themesonline
 IF /I '%INPUT%'=='3' GOTO upthemes
 IF /I '%INPUT%'=='4' GOTO uppowah
 IF /I '%INPUT%'=='5' GOTO MENU2
+IF /I '%INPUT%'=='6' GOTO newalias
+IF /I '%INPUT%'=='7' GOTO winhelper
 IF /I '%INPUT%'=='Q' GOTO Quit
 CLS
 GOTO MENU
@@ -66,6 +69,9 @@ copy /y %TEMP%\powah\ds\popeye2.txt %pop2%
 copy /y %TEMP%\powah\ds\popeye3.txt %pop3%
 copy /y %TEMP%\powah\ds\popeye4.txt %pop4%
 copy /y %TEMP%\powah\ds\allposhthemes.txt %thms%
+copy /y %TEMP%\powah\ds\rcwin.ps1 %dslctn%
+copy /y %TEMP%\powah\ds\winhelper.txt %dslctn%
+copy /y %TEMP%\powah\ds\installtron.ps1 %dslctn%
 GOTO MENU
 :MENU2
 CLS
@@ -118,6 +124,63 @@ type %pop4%
 SET /P INPUT= Understood? (Y): 
 IF /I '%INPUT%'=='Y' GOTO MENU2
 cls
+:winhelper
+cls
+IF NOT EXIST C:\Users\%username%\Documents\WindowsPowerShell\winhelper.bat (
+    ECHO winhelper.bat IS NOT Installed Locaed in your WindowsPowerShell Folder
+)
+title winhelper
+SET "prompt= %~dp0\ds\winhelper.txt"
+:MENU
+type %prompt%
+SET INPUT=
+SET /P INPUT= Choose An Option (Or Q To Quit): 
+IF /I '%INPUT%'=='1' GOTO winactivation
+IF /I '%INPUT%'=='2' GOTO tronscript
+IF /I '%INPUT%'=='3' GOTO winfilecheck
+IF /I '%INPUT%'=='4' GOTO windebloater
+IF /I '%INPUT%'=='5' GOTO reclaimwin
+IF /I '%INPUT%'=='6' GOTO edgerd
+IF /I '%INPUT%'=='Q' GOTO Quit
+:winactivation
+cls
+powershell -C "iwr -useb https://massgrave.dev/get | iex"
+cls
+GOTO MENU
+:tronscript
+cls
+powershell -C "start https://github.com/bmrf/tron#use"
+powershell -C "Powershell.exe -executionpolicy remotesigned -File $HOME\Documents\WindowsPowerShell\ds\installtron.ps1"
+start C:\Users\%username%\Desktop\Tron.exe
+GOTO MENU
+:winfilecheck
+cls
+powershell -C "sfc /scannow"
+GOTO MENU
+:windebloater
+cls
+IF NOT EXIST C:\Users\%username%\Documents\winutil (
+    powershell -C "cd $HOME\Documents; git clone https://github.com/ChrisTitusTech/winutil.git; cd winutil; Powershell.exe -executionpolicy remotesigned -File winutil.ps1"
+) 
+IF EXIST C:\Users\%username%\Documents\winutil (
+    powershell -C "cd $HOME\Documents\winutil; Powershell.exe -executionpolicy remotesigned -File winutil.ps1"
+)
+GOTO MENU
+:reclaimwin
+cls
+Powershell -executionpolicy remotesigned -File %~dp0\ds\rcwin.ps1
+:edgerd
+cls
+IF NOT EXIST "C:\Program Files\MSEdgeRedirect" ( 
+    winget install --id=rcmaehl.MSEdgeRedirect -e 
+)
+IF EXIST "C:\Program Files\MSEdgeRedirect" (
+    ECHO MSEdgeRedirect is already Installed
+)
+:newalias
+cls
+ECHO UnderConstruction
+
 :Quit
 cls
 ECHO If Your Theme DID NOT Load, Manually Reload Your PowerShellProfile. (e.g.: . $PROFILE)
