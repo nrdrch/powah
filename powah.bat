@@ -194,8 +194,8 @@ SET nameofalias=
 SET /P nameofalias= Name Of The Alias: 
 SET originalcmd=
 SET /P originalcmd= Command The Alias The Should Replace: 
-GOTO confirmalias
 cls
+GOTO confirmalias
 :hpnewalias
 cls
 Type %pop4b%
@@ -207,11 +207,11 @@ CLS
 ECHO New-Alias -Name %nameofalias% -Value %originalcmd%
 Type %pop3b%
 SET INPUT=
-SET /P INPUT= Choose An Option (Or Q To Quit):
+SET /P INPUT= Choose An Option (Or Q To Quit): 
 IF /I '%INPUT%'=='1' GOTO svalias
 IF /I '%INPUT%'=='0' GOTO MENU
 IF /I '%INPUT%'=='Q' GOTO Quit
-
+cls
 :svalias
 cls
 ECHO New-Alias -Name %nameofalias% -Value %originalcmd% >> %psprofile%
