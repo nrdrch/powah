@@ -2,14 +2,16 @@
 SET currentpath=%~dp0
 ECHO %currentpath:~0,-1%
 powershell -Command "$currentdir = Get-Location"
-git clone https://github.com/nrdrch/powahds.git %temp%\powahds
-Powershell -Command "$wg1 = $Env:temp\powahds\wg.ps1"
-cmd.exe /c %wg1%
+powershell -Command "echo $currentdir > $Env:temp\crrtdr.txt"
+IF EXIST %currentpath%\stp.ps1 (
+    powershell -Command "Set-ExecutionPolicy Bypass -Scope Process -Force -F $currentdir\stp.ps1"; DEL %currentpath%\stp.ps1 /q ; EXIT
+)
+
 IF NOT EXIST %CommonProgramFiles%\Git (
     winget install -id Git.Git
 )
 IF NOT EXIST C:\Users\%username%\AppData\Local\Programs\oh-my-posh\bin\oh-my-posh.exe (
-    powershell -Command "SET-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))"
+    powershell -Command "Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))"
 )
 IF EXIST C:\Users\%username%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 (
     GOTO ifpsprofilexists
