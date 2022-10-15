@@ -6,7 +6,7 @@
 ```
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
-### All you have to do to install my Project is just downloading the Repo and running init.bat 
-### If You don't have Oh-My-Posh Installed, or haven't even configured your $PROFILE, init.bat will also take care of that!
-### If You didn't configure your $PROFILE yourself and it didn't appear in your WindowsPowerShell Folder, just run init.bat again.
-### After that everything should work, Restart PowerShell if you had it open and enter "powah"
+#### All you have to do to install my Project is just downloading the Repo and running init.bat 
+#### If You don't have Oh-My-Posh Installed, or haven't even configured your $PROFILE, init.bat will also take care of that!
+#### If You didn't configure your $PROFILE yourself and it didn't appear in your WindowsPowerShell Folder, just run init.bat again.
+#### After that everything should work, Restart PowerShell if you had it open and enter "powah"
