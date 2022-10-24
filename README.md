@@ -1,10 +1,9 @@
 # powah
 ### Tiny Script To Update & Change Oh-Posh-Themes From The Command-line & Create Modules for PowerShell
 ## You Need: 
-App Installer 
-[Git for Windows](https://gitforwindows.org/)
-[some kind of Monospace Font](https://www.nerdfonts.com/font-downloads)
-[![Showcase](https://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+###### App Installer
+###### [Git for Windows](https://gitforwindows.org/)
+###### [some kind of Monospace Font](https://www.nerdfonts.com/font-downloads)
 #### You Might Need To Change Your Execution Policy with: 
 ```
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
