@@ -13,4 +13,3 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 git clone https://github.com/nrdrch/powah.git $Env:TEMP\powah | cmd.exe /c $Env:TEMP\powah\init.bat
 ```
 When it is done Installing, Restart PowerShell and enter powah "powah"
-Start-BitsTransfer -Source 
