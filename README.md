@@ -1,5 +1,5 @@
 # powah
-### Tiny Script To Update & Change [Oh-Posh-Themes](https://ohmyposh.dev/docs/) From The Command-line & Create Modules for PowerShell
+### Tiny Script To Update & Change [Oh-Posh-Themes](https://ohmyposh.dev/docs/) From The Command-line, Create Modules or Alias for PowerShell & Run A Lot Of Useful Things For Windows
 ## You Need: 
 ###### [App Installer](https://apps.microsoft.com/store/detail/appinstaller/9NBLGGH4NNS1?hl=de-de&gl=de)
 ###### [Git for Windows](https://gitforwindows.org/)
