@@ -7,7 +7,6 @@
 ### You DO NOT Need:
 - Oh-My-Posh (Preinstalled)
 - Pre Configured PowerShell
-- 
 #### You Might Need To Change Your Execution Policy with: 
 ```
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
