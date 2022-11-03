@@ -3,7 +3,7 @@
 ## You Need: 
 ###### [App Installer](https://apps.microsoft.com/store/detail/appinstaller/9NBLGGH4NNS1?hl=de-de&gl=de)
 ###### [Git for Windows](https://gitforwindows.org/)
-###### [Some Kind Of Monospace Font](https://www.nerdfonts.com/font-downloads) (Make Sure To Install THe Windows Compatible Ones You Get In The Zip)
+###### [Some Kind Of Monospace Font](https://www.nerdfonts.com/font-downloads) (Make Sure To Install The Windows Compatible Ones You Get In The Zip)
 
 #### You Might Need To Change Your Execution Policy with: 
 ```
